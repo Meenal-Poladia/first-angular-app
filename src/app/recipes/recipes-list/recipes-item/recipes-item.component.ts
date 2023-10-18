@@ -10,8 +10,7 @@ export class RecipesItemComponent {
   @Input() recipe: Recipe;
   @Output() recipeSelected = new EventEmitter<void>();
 
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInIt(){}
 
