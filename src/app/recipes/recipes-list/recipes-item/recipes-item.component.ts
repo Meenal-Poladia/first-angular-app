@@ -13,7 +13,7 @@ export class RecipesItemComponent {
   constructor() {
   }
 
-  ngOnInIt(){
+  ngOnInIt(){}
 
   onSelected() {
     this.recipeSelected.emit();
