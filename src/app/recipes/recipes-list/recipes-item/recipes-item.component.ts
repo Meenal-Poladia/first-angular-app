@@ -9,6 +9,8 @@ import {Recipe} from "../../recipe.model";
 })
 export class RecipesItemComponent {
   @Input() recipe: Recipe;
+  @Input() index: number;
+
 
   constructor() {}
 
