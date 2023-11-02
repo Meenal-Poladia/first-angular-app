@@ -30,7 +30,7 @@
             class="btn btn-success"
             [disabled]="!form.valid"
             type="submit">
-            Add
+            {{ editMode ? 'Update' : 'Add' }}
           </button>
           <button
             class="btn btn-danger"
