@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
 import {RecipeService} from "../recipe.service";
+import {Recipe} from "../recipe.model";
 
 @Component({
   selector: 'app-recipes-edit',
@@ -62,7 +63,11 @@ export class RecipesEditComponent implements OnInit{
   }
 
   onSubmit() {
-    console.log(this.recipeForm);
+    if (this.editMode) {
+      this.recipeService.updaterecipe(this.id, this.recipeForm.value);
+    } else {
+      this.recipeService.addRecipe(this.recipeForm.value);
+    }
   }
 
   get controls() { // a getter!
@@ -78,6 +83,6 @@ export class RecipesEditComponent implements OnInit{
           Validators.pattern(/^[1-9]+[0-9]*$/)
         ])
       })
-    )
+    );
   }
 }
